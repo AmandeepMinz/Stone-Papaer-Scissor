@@ -1,3 +1,5 @@
+#***********Stone,Paper,Scissor game*****************
+#This code is written by Amandeep Minz
 import random
 user_score=0
 computer_score= 0
