@@ -1,0 +1,60 @@
+import random
+user_score=0
+computer_score= 0
+play_count = 0
+print("LETS PLAY...STONE, PAPER, SCISSOR")
+opt = ["s","p","r"]
+
+for i in range(8):
+    play_count +=1
+    computer_turn = random.choice(opt)
+    user_turn = input("Choose your options:\n's'- Stone\n'p'- Paper\n'r'- Scissor\n-->")
+    if user_turn =='s'or user_turn=="S":
+        if computer_turn =="s":
+            print("computer choose: " + computer_turn)
+            print("Ohh, it's a TIE...!")
+        elif computer_turn == "r":
+
+            print("computer choose: "+computer_turn)
+            user_score +=1
+            print("Ahh.. You WIN This time")
+
+        else:
+            computer_score +=1
+            print("computer choose: " + computer_turn)
+            print("Yhee... You LOOSE")
+    elif user_turn =='p'or user_turn=='p':
+        if computer_turn == "p":
+            print("computer choose: " + computer_turn)
+            print("Ohh, it's a TIE...!")
+        elif computer_turn =="S":
+            print("computer choose: " + computer_turn)
+            computer_score += 1
+            print("Yhee... You LOOSE...!")
+        else:
+            print("computer choose: " + computer_turn)
+            user_score +=1
+            print("Ahh.. You WIN This time")
+    elif user_turn =="r" or user_turn =="R":
+        if computer_turn =="r":
+            print("computer choose: " + computer_turn)
+            print("Ohh...it's a TIE...!")
+        elif computer_turn == "p":
+            print("computer choose: " + computer_turn)
+            user_score +=1
+            print("Ahh... You WIN this time")
+        else:
+            computer_score +=1
+            print("computer choose: " + computer_turn)
+            print("Yhee... You LOOSE..!")
+    else:
+        print("Wrong input...! Try entering from the given options")
+print("*"*30)
+if computer_score > user_score:
+    print("LOOSER...! I WIN you LOOSE")
+    print("Your score: "+str(user_score)+"\nMy score: "+str(computer_score))
+elif computer_score < user_score:
+    print("Ohh..! shit.. you WIN.. but I bet you will not win again")
+    print("Your score"+str(user_score)+"\nMy score"+str(computer_score))
+else:
+    print("I am shocked..Ahh.. it's a TIE..!")
